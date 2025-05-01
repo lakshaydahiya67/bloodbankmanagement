@@ -31,8 +31,8 @@ dotenv.load_dotenv(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = config('SECRET_KEY', default=os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.getenv('PRODUCTION', 'False').lower() != 'true'
-DEBUG = True
+DEBUG = os.getenv('PRODUCTION', 'False').lower() != 'true'
+# DEBUG = True
 
 # Allowed hosts for development and production
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '.onrender.com').split(',')
