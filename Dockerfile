@@ -12,6 +12,7 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
+    postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
@@ -21,9 +22,6 @@ RUN pip install gunicorn
 
 # Copy the application code
 COPY . .
-
-# Collect Static files
-RUN python manage.py collectstatic --noinput
 
 # Run Gunicorn server
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "bloodbankmanagement.wsgi:application"]
