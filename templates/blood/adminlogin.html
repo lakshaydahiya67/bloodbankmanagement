@@ -12,10 +12,144 @@
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
-    <!-- Main CSS-->
-    <link href="{% static "css/main.css" %}"rel="stylesheet" media="all">
     <style>
+      /* Essential styles from main.css */
+      .form-row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-bottom: 40px;
+      }
 
+      .form-row .name {
+        width: 125px;
+        color: #555;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .form-row .value {
+        width: -webkit-calc(100% - 125px);
+        width: -moz-calc(100% - 125px);
+        width: calc(100% - 125px);
+      }
+
+      .bg-gra-03 {
+        background: linear-gradient(to top right, #8a7b5a, #6f7d8a);
+      }
+      
+      .p-t-45 {
+        padding-top: 45px;
+      }
+      
+      .p-b-50 {
+        padding-bottom: 50px;
+      }
+      
+      .wrapper--w790 {
+        max-width: 790px;
+        margin: 0 auto;
+      }
+      
+      .card {
+        overflow: hidden;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background: #fff;
+        margin-bottom: 30px;
+      }
+      
+      .card-5 {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+      }
+      
+      .card-5 .card-heading {
+        padding: 20px 0;
+        background: #1a1a1a;
+        -webkit-border-top-left-radius: 10px;
+        -moz-border-radius-topleft: 10px;
+        border-top-left-radius: 10px;
+        -webkit-border-top-right-radius: 10px;
+        -moz-border-radius-topright: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+      }
+      
+      .card-5 .card-body {
+        padding: 52px 85px;
+        padding-bottom: 73px;
+      }
+      
+      .title {
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        color: #fff;
+      }
+      
+      .input--style-5 {
+        background: #e5e5e5;
+        line-height: 50px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: #555;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+
+      @media (max-width: 767px) {
+        .form-row {
+          display: block;
+        }
+        .form-row .name,
+        .form-row .value {
+          display: block;
+          width: 100%;
+        }
+        .form-row .name {
+          margin-bottom: 7px;
+        }
+        .card-5 .card-body {
+          padding: 40px 30px;
+          padding-bottom: 50px;
+        }
+      }
+
+      /* Additional backup styles for input elements in case external CSS fails */
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+      }
+      
+      .btn-block {
+        display: block;
+        width: 100%;
+      }
     </style>
   </head>
   <body>

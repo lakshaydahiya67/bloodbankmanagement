@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: bloodbankmanagement
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn bloodbankmanagement.wsgi:application"
+    envVars:
+      - key: PRODUCTION
+        value: true
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://*.onrender.com"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PORT
+        value: 10000 
